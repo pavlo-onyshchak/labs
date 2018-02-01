@@ -1,0 +1,11 @@
+*tlog
+*exe
+*dll
+*pdb
+*idb
+*suo
+Debug/*
+*db
+*ilk
+*obj
+*log
