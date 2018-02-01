@@ -1,61 +1,58 @@
 #include<iostream>
+
 using namespace std;
+
 struct Node
 {
-	Node*prev = NULL;
-	Node*next = NULL;
+	Node* prev = nullptr;
+	Node* next = nullptr;
 	int key;
 
 };
+
 struct Queue
 {
-	Node*begin = NULL;
-	Node *end = NULL;
+	Node* begin = nullptr;
+	Node* end = nullptr;
 };
+
 void push(Queue* queue, int key)
 {
-	if (queue->begin == NULL)
+	if (queue->begin == nullptr)
 	{
 		queue->begin = new Node;
 		queue->end = queue->begin;
 		queue->begin->key = key;
-		return;
 	}
-	if (queue->begin == queue->end)
+	else if (queue->begin == queue->end)
 	{
 		queue->end = new Node;
 		queue->end->prev = queue->begin;
 		queue->begin->next = queue->end;
 		queue->end->key = key;
-		queue->end->next = NULL;
 	}
 	else
 	{
-		Node*h = queue->end;
+		Node* h = queue->end;
 		queue->end = new Node;
 		queue->end->prev = h;
 		h->next = queue->end;
 		queue->end->key = key;
-		queue->end->next = NULL;
 	}
 }
-void pop(Queue*queue)
+void pop(Queue* queue)
 {
-	if (queue->begin == NULL)
+	if (queue->begin != nullptr)
 	{
-		return;
-	}
-	else
-	{
-		Node*t = queue->begin;
+		Node* t = queue->begin;
 		queue->begin = queue->begin->next;
 		delete t;
 	}
 }
 
-void front(Queue*queue)
+void front(Queue* queue)
 {
-	if (queue->begin != NULL)
+	if (queue->begin != nullptr)
 	{
 		cout << queue->begin->key << endl;
 	}
@@ -65,9 +62,9 @@ void front(Queue*queue)
 	}
 }
 
-void back(Queue*queue)
+void back(Queue* queue)
 {
-	if (queue->end != NULL)
+	if (queue->end != nullptr)
 	{
 		cout << queue->end->key << endl;
 	}
@@ -77,27 +74,26 @@ void back(Queue*queue)
 	}
 }
 
-void size(Queue*queue)
+void size(Queue* queue)
 {
-	int amount;
-	Node*k = queue->begin;
-	for (int i = 1; k != NULL; i++)
+	int count = 0;
+	Node* k = queue->begin;
+	while (k != nullptr)
 	{
-		amount = i;
+		++count;
 		k = k->next;
 	}
-	cout << amount << endl;
+
+	cout << count << endl;
 }
 
-void Traverse(const Queue*queue)
+void Traverse(const Queue* queue)
 {
-	Node* h;
-	h = queue->begin;
-	while (h != NULL)
+	Node* h = queue->begin;
+	while (h != nullptr)
 	{
 		cout << h->key;
 		h = h->next;
-
 	}
 }
 
