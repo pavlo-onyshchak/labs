@@ -5,11 +5,10 @@ using namespace std;
 
 
 void Queue::push(int key)
- {
-    int  c = begin->key;
+{
 	if (begin == nullptr)
 	{
-		begin = new Node; 
+		begin = new Node;
 		end = begin;
 		begin->key = key;
 	}
@@ -28,19 +27,19 @@ void Queue::push(int key)
 		h->next = end;
 		end->key = key;
 	}
- }
-   void Queue::pop()
- {
+}
+void Queue::pop()
+{
 	if (begin != nullptr)
 	{
 		Node* t = begin;
 		begin = begin->next;
 		delete t;
 	}
- }
+}
 
- int Queue::front() const
- {
+int Queue::front() const
+{
 	if (begin != nullptr)
 	{
 		return begin->key;
@@ -49,11 +48,11 @@ void Queue::push(int key)
 	{
 		return 0;
 	}
- }
+}
 
 int Queue::back() const
- {
-	if ( end != nullptr)
+{
+	if (end != nullptr)
 	{
 		return end->key;
 	}
@@ -61,10 +60,10 @@ int Queue::back() const
 	{
 		return 0;
 	}
- }
+}
 
-int Queue::size () const
- {
+int Queue::size() const
+{
 	int count = 0;
 	Node* k = begin;
 	while (k != nullptr)
@@ -72,8 +71,8 @@ int Queue::size () const
 		++count;
 		k = k->next;
 	}
-    return count;
- }
+	return count;
+}
 
 //std::vector<int> Queue::DebugTraverse() const
 // {
@@ -86,11 +85,16 @@ int Queue::size () const
 //	return std::vector<int>();
 // }
 
-   Queue::~Queue()
- {
-	   delete begin;
-	   delete end;
- }
+Queue::~Queue()
+{
+	Node* iter = begin;
+	while (iter)
+	{
+		Node* nextIter = iter->next;
+		delete iter;
+		iter = nextIter;
+	}
+}
 
 
 
