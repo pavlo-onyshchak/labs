@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-	
+	manager a;
    system("pause");
 	return 0;
 }
