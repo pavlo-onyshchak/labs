@@ -1,7 +1,7 @@
-#include"developer.h"
-#include"galera.h"
-#include"manager.h"
-#include"employe.h"
+#include"Developer.h"
+#include"Galera.h"
+#include"Manager.h"
+#include"Employee.h"
 #include<iostream>
 #include <string>
 
@@ -9,7 +9,6 @@ using namespace std;
 
 int main()
 {
-	manager a;
-   system("pause");
+   	system("pause");
 	return 0;
 }

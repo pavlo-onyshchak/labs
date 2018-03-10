@@ -1,14 +1,14 @@
-#include"developer.h"
+#include"Developer.h"
 #include<iostream>;
 
 using namespace std;
 
-void developer::setLanguage(string lang)
+void Developer::setLanguage(string lang)
 {
 	language = lang;
 }
 
-string developer::getLanguage()
+string Developer::getLanguage()
 {
 	return language;
 }

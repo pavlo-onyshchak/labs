@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class employee
+class Employee
 {
 private:
 	std::string name;

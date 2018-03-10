@@ -1,11 +1,10 @@
 #pragma once
 #include<string>
-#include "employe.h"
+#include "Employee.h"
 
 using namespace std;
 
-
-class developer:public employee
+class Developer:public Employee
 {
 private:
 	   string language;

@@ -1,34 +1,34 @@
-#include"galera.h"
+#include"Galera.h"
 #include<iostream>
 
 using namespace std;
 
-void galera::setName (string n_name)
+void Galera::setName (string n_name)
 {
 	name = n_name;
 }
 
-string galera::getName()
+string Galera::getName()
 {
 	return name;
 }
 
-void galera::setCount_of_employe(int count)
+void Galera::setCountOfemploye(int count)
 {
-	count_of_employe = count;
+	countOfemploye = count;
 }
 
-int galera::getCount_of_employe()
+int Galera::getCountOfemploye()
 {
-	return count_of_employe;
+	return countOfemploye;
 }
 
-void galera::setTotal_sallary(int total)
+void Galera::setTotalSallary(int total)
 {
-	total_sallary = total;
+	totalSallary = total;
 }
 
-int galera::getTotal_sallary()
+int Galera::getTotalSallary()
 {
-	return total_sallary;
+	return totalSallary;
 }

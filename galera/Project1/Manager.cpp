@@ -1,14 +1,14 @@
-#include"manager.h"
+#include"Manager.h"
 #include<iostream>
 
 using namespace std;
 
-void manager::setCount_of_depender_employee(int n_count)
+void Manager::setSubordinatesCount(int n_count)
 {
-	count_of_depender_employe = n_count;
+	subordinatesCount = n_count;
 }
 
-int manager::getCount_of_depender_employe()
+int Manager::getSubordinatesCount()
 {
-	return count_of_depender_employe;
+	return subordinatesCount;
 }

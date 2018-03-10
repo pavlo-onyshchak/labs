@@ -1,35 +1,35 @@
-#include"employe.h"
+#include"Employee.h"
 #include<iostream>	
 #include<string>
 
 using namespace std;
 
-void employee::setName(string s_name)
+void Employee::setName(string s_name)
 {
 	name = s_name;
 }
 
-string employee::getName()
+string Employee::getName()
 {
 	return name;
 }
 
-void employee::setSurname (string s_surname)
+void Employee::setSurname (string s_surname)
 {
 	surname = s_surname;
 }
 
-string employee::getSurname()
+string Employee::getSurname()
 {
 	return surname;
 }
 
-void employee::setSallary(int n_sallary)
+void Employee::setSallary(int n_sallary)
 {
 	sallary = n_sallary;
 }
 
-int employee::getSallary()
+int Employee::getSallary()
 {
 	return sallary;
 }

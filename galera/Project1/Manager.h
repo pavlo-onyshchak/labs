@@ -1,16 +1,16 @@
 #pragma once
-#include"developer.h"
+#include"Developer.h"
 #include<string>
 
 using namespace std;
 
-class manager:public employee
+class Manager:public Employee
 {
 private:
-	int count_of_depender_employe;
+	int  subordinatesCount;
 
 public:
-	void setCount_of_depender_employee(int n_count);
-	int getCount_of_depender_employe();
+	void setSubordinatesCount(int n_count);
+	int getSubordinatesCount();
 
 };

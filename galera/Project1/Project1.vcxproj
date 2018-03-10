@@ -19,17 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="developer.cpp" />
-    <ClCompile Include="employe.cpp" />
-    <ClCompile Include="galera.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="manager.cpp" />
+    <ClInclude Include="Developer.h" />
+    <ClInclude Include="Employee.h" />
+    <ClInclude Include="Galera.h" />
+    <ClInclude Include="Manager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="developer.h" />
-    <ClInclude Include="employe.h" />
-    <ClInclude Include="galera.h" />
-    <ClInclude Include="manager.h" />
+    <ClCompile Include="Developer.cpp" />
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="Galera.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Manager.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
