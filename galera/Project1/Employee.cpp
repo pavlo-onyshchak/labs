@@ -4,34 +4,34 @@
 
 using namespace std;
 
-void Employee::setName(string s_name)
+void Employee::setName(string name)
 {
-	name = s_name;
+	_name = name;
 }
 
 string Employee::getName()
 {
-	return name;
+	return _name;
 }
 
-void Employee::setSurname (string s_surname)
+void Employee::setSurname (string surname)
 {
-	surname = s_surname;
+	_surname = surname;
 }
 
 string Employee::getSurname()
 {
-	return surname;
+	return _surname;
 }
 
-void Employee::setSallary(int n_sallary)
+void Employee::setSallary(int sallary)
 {
-	sallary = n_sallary;
+	_sallary = sallary;
 }
 
 int Employee::getSallary()
 {
-	return sallary;
+	return _sallary;
 }
 
 
