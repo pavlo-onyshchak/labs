@@ -12,9 +12,9 @@ private:
 
 public:
     void setName(string name);
-    string getName();
+    string getName() const;
     void setSurname(string surname);
-    string getSurname();
+    string getSurname() const;
     void setSallary(int sallary);
-    int getSallary();
+    int getSallary() const;
 };

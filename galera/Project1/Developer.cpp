@@ -8,7 +8,7 @@ void Developer::setLanguage(string language)
     _language = language;
 }
 
-string Developer::getLanguage()
+string Developer::getLanguage() const
 {
     return _language;
 }

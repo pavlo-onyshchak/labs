@@ -11,5 +11,5 @@ private:
 
 public:
     void setLanguage(string language);
-    string getLanguage();
+    string getLanguage() const;
 };

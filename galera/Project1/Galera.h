@@ -7,14 +7,14 @@ class Galera
 {
 private:
     string _name;
-    int _countOfemploye;
+    int _EmployeeCount;
     int _totalSallary;
 
 public:
     void setName(string name);
-    string getName();
-    void setCountOfemploye(int count);
-    int getCountOfemploye();
+    string getName() const;
+    void setEmployeeCount(int count);
+    int getEmployeeCount() const;
     void setTotalSallary(int total);
-    int getTotalSallary();
+    int getTotalSallary() const;
 };

@@ -8,19 +8,19 @@ void Galera::setName(string name)
     _name = name;
 }
 
-string Galera::getName()
+string Galera::getName() const
 {
     return _name;
 }
 
-void Galera::setCountOfemploye(int count)
+void Galera::setEmployeeCount(int count)
 {
-    _countOfemploye = count;
+    _EmployeeCount = count;
 }
 
-int Galera::getCountOfemploye()
+int Galera::getEmployeeCount() const
 {
-    return _countOfemploye;
+    return _EmployeeCount;
 }
 
 void Galera::setTotalSallary(int total)
@@ -28,7 +28,7 @@ void Galera::setTotalSallary(int total)
     _totalSallary = total;
 }
 
-int Galera::getTotalSallary()
+int Galera::getTotalSallary() const
 {
     return _totalSallary;
 }

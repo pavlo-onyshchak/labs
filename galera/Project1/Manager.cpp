@@ -8,7 +8,7 @@ void Manager::setSubordinatesCount(int count)
     _subordinatesCount = count;
 }
 
-int Manager::getSubordinatesCount()
+int Manager::getSubordinatesCount() const
 {
     return _subordinatesCount;
 }

@@ -11,5 +11,5 @@ private:
 
 public:
     void setSubordinatesCount(int count);
-    int getSubordinatesCount();
+    int getSubordinatesCount() const;
 };
