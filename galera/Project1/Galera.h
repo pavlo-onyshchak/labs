@@ -6,12 +6,12 @@ using namespace std;
 class Galera
 {
 private:
-	string name;
-	int countOfemploye;
-	int totalSallary;
+	string _name;
+	int _countOfemploye;
+	int _totalSallary;
 
 public:
-	void setName(string n_name);
+	void setName(string name);
 	string getName();
 	void setCountOfemploye(int count);
 	int getCountOfemploye();

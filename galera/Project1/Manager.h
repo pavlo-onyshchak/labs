@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Manager:public Employee
+class Manager : public Employee
 {
 private:
 	int  subordinatesCount;

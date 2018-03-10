@@ -3,32 +3,32 @@
 
 using namespace std;
 
-void Galera::setName (string n_name)
+void Galera::setName (string name)
 {
-	name = n_name;
+	_name = name;
 }
 
 string Galera::getName()
 {
-	return name;
+	return _name;
 }
 
 void Galera::setCountOfemploye(int count)
 {
-	countOfemploye = count;
+	_countOfemploye = count;
 }
 
 int Galera::getCountOfemploye()
 {
-	return countOfemploye;
+	return _countOfemploye;
 }
 
 void Galera::setTotalSallary(int total)
 {
-	totalSallary = total;
+	_totalSallary = total;
 }
 
 int Galera::getTotalSallary()
 {
-	return totalSallary;
+	return _totalSallary;
 }

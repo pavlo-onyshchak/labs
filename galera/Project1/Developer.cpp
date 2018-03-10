@@ -3,12 +3,12 @@
 
 using namespace std;
 
-void Developer::setLanguage(string lang)
+void Developer::setLanguage(string language)
 {
-	language = lang;
+	_language = language;
 }
 
 string Developer::getLanguage()
 {
-	return language;
+	return _language;
 }

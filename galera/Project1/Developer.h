@@ -4,13 +4,13 @@
 
 using namespace std;
 
-class Developer:public Employee
+class Developer : public Employee
 {
 private:
-	   string language;
+	   string _language;
 
 public:
-	void setLanguage(string lang);
+	void setLanguage(string language);
 	string getLanguage();
 
 };

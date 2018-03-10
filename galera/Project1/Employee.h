@@ -6,15 +6,15 @@ using namespace std;
 class Employee
 {
 private:
-	std::string name;
-	std::string surname;
-	int sallary;
+	string _name;
+	string _surname;
+	int _sallary;
 
 public:
-	void setName(string s_name);
+	void setName(string name);
 	string getName();
-	void setSurname(string s_surname);
+	void setSurname(string surname);
 	string getSurname();
-	void setSallary(int n_sallary);
+	void setSallary(int sallary);
 	int getSallary();
 };
