@@ -7,10 +7,9 @@ using namespace std;
 class Developer : public Employee
 {
 private:
-	   string _language;
+    string _language;
 
 public:
-	void setLanguage(string language);
-	string getLanguage();
-
+    void setLanguage(string language);
+    string getLanguage();
 };

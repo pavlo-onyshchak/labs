@@ -3,12 +3,12 @@
 
 using namespace std;
 
-void Manager::setSubordinatesCount(int n_count)
+void Manager::setSubordinatesCount(int count)
 {
-	subordinatesCount = n_count;
+    _subordinatesCount = count;
 }
 
 int Manager::getSubordinatesCount()
 {
-	return subordinatesCount;
+    return _subordinatesCount;
 }

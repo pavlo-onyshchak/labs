@@ -6,32 +6,30 @@ using namespace std;
 
 void Employee::setName(string name)
 {
-	_name = name;
+    _name = name;
 }
 
 string Employee::getName()
 {
-	return _name;
+    return _name;
 }
 
-void Employee::setSurname (string surname)
+void Employee::setSurname(string surname)
 {
-	_surname = surname;
+    _surname = surname;
 }
 
 string Employee::getSurname()
 {
-	return _surname;
+    return _surname;
 }
 
 void Employee::setSallary(int sallary)
 {
-	_sallary = sallary;
+    _sallary = sallary;
 }
 
 int Employee::getSallary()
 {
-	return _sallary;
+    return _sallary;
 }
-
-

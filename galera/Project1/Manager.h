@@ -7,10 +7,9 @@ using namespace std;
 class Manager : public Employee
 {
 private:
-	int  subordinatesCount;
+    int  _subordinatesCount;
 
 public:
-	void setSubordinatesCount(int n_count);
-	int getSubordinatesCount();
-
+    void setSubordinatesCount(int count);
+    int getSubordinatesCount();
 };
