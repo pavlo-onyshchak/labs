@@ -9,6 +9,11 @@ using namespace std;
 
 int main()
 {
-    system("pause");
+    Developer first;
+    first.setLanguage(Developer::language::java);
+    string k = first.getLanguage();
+    cout << k << endl;
+
+   system("pause");
     return 0;
 }

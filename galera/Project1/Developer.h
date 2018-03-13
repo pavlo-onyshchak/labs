@@ -10,6 +10,8 @@ private:
     string _language;
 
 public:
-    void setLanguage(string language);
+    enum class  language { c, c_sharp, python, c_plusplus, java };
+    void setLanguage(language language);
     string getLanguage() const;
-};
+ };
+
