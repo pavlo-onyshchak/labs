@@ -1,5 +1,7 @@
 #pragma once
 #include<string>
+#include"Employee.h"
+#include<vector>
 
 using namespace std;
 
@@ -7,8 +9,9 @@ class Galera
 {
 private:
     string _name;
-    int _EmployeeCount;
+    int _employeeCount;
     int _totalSallary;
+    vector<Employee> _employeeList;
 
 public:
     void setName(string name);
@@ -17,4 +20,8 @@ public:
     int getEmployeeCount() const;
     void setTotalSallary(int total);
     int getTotalSallary() const;
-};
+    bool hireEmployee(Employee);
+    friend std::ostream& operator<<(ostream& , const Galera&);
+    bool fireEmployee(Employee);
+ };
+

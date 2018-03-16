@@ -4,20 +4,13 @@
 
 using namespace std;
 
-void Employee::setName(string name)
-{
-    _name = name;
-}
+
 
 string Employee::getName() const
 {
     return _name;
 }
 
-void Employee::setSurname(string surname)
-{
-    _surname = surname;
-}
 
 string Employee::getSurname() const
 {
@@ -33,3 +26,15 @@ int Employee::getSallary() const
 {
     return _sallary;
 }
+
+bool Employee::operator==(const Employee& first)
+{
+    return first._name == _name && first._sallary == _sallary && first._surname == _surname;
+}
+
+std::ostream & operator<<(ostream & output, const Employee & object)
+{
+    output << object.getName() << " " << object.getSurname() << " " << object.getSallary() << endl;
+    return output;
+}
+
