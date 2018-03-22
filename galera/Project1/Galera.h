@@ -14,7 +14,7 @@ private:
     vector<Employee> _employeeList;
 
 public:
-    void setName(string name);
+    Galera(string name);
     string getName() const;
     void setEmployeeCount(int count);
     int getEmployeeCount() const;

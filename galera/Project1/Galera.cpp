@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void Galera::setName(string name)
+Galera::Galera(string name)
 {
     _name = name;
 }
@@ -35,27 +35,22 @@ int Galera::getTotalSallary() const
 
 bool Galera::hireEmployee(Employee first)
 {
-    bool k = true;
+
     if (_employeeList.empty())
     {
         _employeeList.push_back(first);
         return true;
     }
-    auto x = _employeeList.begin();
-    for (int i = 0; i < _employeeList.size(); i++)
+    for (auto it=_employeeList.begin(); it!=_employeeList.end(); it++)
     {
         
-        if (first == *x)
+        if (first == *it)
         {
             return false; 
         }
-        ++x;
     }
-    if (k == true)
-    {
         _employeeList.push_back(first);
         return true;
-    }
 }
 
  ostream& operator<<(ostream & output,const Galera& object)

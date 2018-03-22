@@ -4,13 +4,17 @@
 
 using namespace std;
 
-
-
 string Employee::getName() const
 {
     return _name;
 }
 
+
+Employee::Employee(string name, string surname)
+{
+    _name = name;
+    _surname = surname;
+}
 
 string Employee::getSurname() const
 {

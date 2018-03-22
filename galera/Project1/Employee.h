@@ -10,9 +10,8 @@ private:
     string _surname;
     int _sallary;
 public:
-    void setName(string name);
+    Employee(string name, string surname);
     string getName() const;
-    void setSurname(string surname);
     string getSurname() const;
     void setSallary(int sallary);
     int getSallary() const;
