@@ -9,5 +9,6 @@ Debug/*
 *ilk
 *obj
 *log
-vs/*
-*vs
+.vs/*
+*.vs
+*.ipch

@@ -35,7 +35,6 @@ int Galera::getTotalSallary() const
 
 bool Galera::hireEmployee(Employee first)
 {
-
     if (_employeeList.empty())
     {
         _employeeList.push_back(first);
@@ -43,14 +42,13 @@ bool Galera::hireEmployee(Employee first)
     }
     for (auto it=_employeeList.begin(); it!=_employeeList.end(); it++)
     {
-        
         if (first == *it)
         {
             return false; 
         }
     }
-        _employeeList.push_back(first);
-        return true;
+   _employeeList.push_back(first);
+    return true;
 }
 
  ostream& operator<<(ostream & output,const Galera& object)
@@ -71,21 +69,16 @@ bool Galera::hireEmployee(Employee first)
 
 bool Galera::fireEmployee(Employee object)
 {
-    if (_employeeList.empty())
-    {
-        return false;
-    }
-   
     for (int i = 0; i < _employeeList.size(); i++)
     {
-        
         if (object == _employeeList[i])
-        {
+         {
             _employeeList.erase(_employeeList.begin() + (i));
             return true;
-        }
+         }
     }
-    
+
+    return false;
 }
 
 
