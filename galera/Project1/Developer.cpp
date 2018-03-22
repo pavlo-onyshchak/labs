@@ -3,46 +3,41 @@
 
 using namespace std;
 
-
 void Developer::setLanguage(language  language)
 {
     switch (language)
     {
-    case language::c:
+    case language :: C:
     {
-        string s = "c";
-        _language = s;
+       _language = Developer::language::C;
         break;
     }
-    case language::c_plusplus:
+    case language :: CPlusPlus:
     {
-        string s = "c++";
-        _language = s;
+        _language = Developer::language::CPlusPlus;
         break;
     }
-    case language::c_sharp:
+    case language :: CSharp:
     {
-        string s = "c_sharp";
-        _language = s;
+       _language = Developer::language::CSharp;
         break;
     }
-    case language::java:
+    case language :: Java:
     {
-        string s = "java";
-        _language = s;
+        _language = Developer::language::Java;
         break;
     }
-    case language::python:
+    case language :: Python:
     {
-        string s = "python";
-        _language = s;
+        _language = Developer::language::Python;
         break;
     }
 
     }
 }
 
-string Developer::getLanguage() const
+Developer::language Developer::getLanguage() const
 {
     return _language;
 }
+

@@ -6,12 +6,11 @@ using namespace std;
 
 class Developer : public Employee
 {
-private:
-    string _language;
-
 public:
-    enum class  language { c, c_sharp, python, c_plusplus, java };
+    enum class  language { C, CSharp, Python, CPlusPlus, Java };
     void setLanguage(language language);
-    string getLanguage() const;
+     language getLanguage() const;
+private:
+    language _language;
  };
 
