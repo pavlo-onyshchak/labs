@@ -23,5 +23,7 @@ public:
     bool hireEmployee(Employee);
     friend std::ostream& operator<<(ostream& , const Galera&);
     bool fireEmployee(Employee);
+    vector<Employee> getEmployee() const;
  };
+
 

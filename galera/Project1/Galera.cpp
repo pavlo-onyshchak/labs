@@ -81,4 +81,9 @@ bool Galera::fireEmployee(Employee object)
     return false;
 }
 
+vector<Employee> Galera::getEmployee() const
+{
+    return _employeeList ;
+}
+
 
