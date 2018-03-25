@@ -8,10 +8,6 @@ ostream& operator<<(ostream& out, const DataBase&)
 	return out;
 }
 
-DataBase::DataBase()
-{
-}
-
 bool DataBase::find(const string& id, ItCompany& company) const
 {
 	vector<string> idCollection = { id };

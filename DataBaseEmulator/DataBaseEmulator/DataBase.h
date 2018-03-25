@@ -1,7 +1,6 @@
 #pragma once
 #include "ItCompany.h"
 #include <iostream>
-#include <fstream>
 #include <vector>
 
 using namespace std;
@@ -9,7 +8,6 @@ using namespace std;
 class DataBase
 {
 public:
-	DataBase();
 	friend ostream& operator<<(ostream& out, const DataBase&); // 1.1, 2.2
 
 	bool find(const string& id, ItCompany&) const; // 1.2
@@ -26,6 +24,4 @@ public:
 private:
 	static vector<ItCompany> read(ifstream& in);
 	static void write(ofstream& out);
-private:
-	fstream _file;
 };
