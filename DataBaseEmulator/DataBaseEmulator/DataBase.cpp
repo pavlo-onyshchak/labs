@@ -1,10 +1,18 @@
 #include "DataBase.h"
+#include <fstream>
 
 static const string DataBaseFile = ".\\DataBase\\it_companies.dat";
 static const string TmpDataBaseFile = ".\\DataBase\\it_companies_tmp.dat";
 
-ostream& operator<<(ostream& out, const DataBase&)
+ostream& operator<<(ostream& out, const DataBase& db)
 {
+	ifstream in(DataBaseFile);
+	auto companyCollection = db.read(in);
+	for (auto company : companyCollection)
+	{
+		out << company << endl;
+	}
+
 	return out;
 }
 

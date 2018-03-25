@@ -48,7 +48,7 @@ vector<string> Split(const string str, const char delim)
 
 ostream& operator<<(ostream& out, const ItCompany& c)
 {
-	out << c._id << Separator << c._name << Separator << c._employeeCount << Separator << c._officeCount << endl;
+	out << c._id << Separator << c._name << Separator << c._employeeCount << Separator << c._officeCount;
 	return out;
 }
 
