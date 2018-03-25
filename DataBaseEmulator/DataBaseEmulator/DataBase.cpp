@@ -1,18 +1,25 @@
 #include "DataBase.h"
 
+static const string DataBaseFile = ".\\DataBase\\it_companies.dat";
+static const string TmpDataBaseFile = ".\\DataBase\\it_companies_tmpu.dat";
+
 ostream & operator<<(ostream & out, const DataBase &)
 {
 	return out;
 }
 
-ItCompany DataBase::find(const string & id) const
+DataBase::DataBase()
 {
-	return ItCompany();
 }
 
-vector<ItCompany> DataBase::find(const vector<string>& ids) const
+bool DataBase::find(const string & id, ItCompany& company) const
 {
-	return vector<ItCompany>();
+	return false;
+}
+
+bool DataBase::find(const vector<string>& ids, vector<ItCompany>& companies) const
+{
+	return false;
 }
 
 bool DataBase::remove(const string & id)
