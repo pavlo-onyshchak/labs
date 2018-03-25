@@ -1,7 +1,8 @@
 #include "ItCompany.h"
+#include <iostream>
 
 int main()
 {
-	ItCompany company("name", 20, 1);
+	system("pause");
 	return 0;
 }
