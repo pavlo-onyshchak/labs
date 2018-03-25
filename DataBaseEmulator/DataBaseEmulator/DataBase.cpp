@@ -1,5 +1,6 @@
 #include "DataBase.h"
 #include <fstream>
+#include <algorithm>
 
 static const string DataBaseFile = ".\\DataBase\\it_companies.dat";
 static const string TmpDataBaseFile = ".\\DataBase\\it_companies_tmp.dat";
@@ -58,23 +59,23 @@ bool DataBase::insert(const vector<string>& idCollection)
 	return false;
 }
 
-bool DataBase::updateRecord(const string& id, const ItCompany& company)
+bool DataBase::update(const string& id, const ItCompany& company)
 {
 	vector<string> idCollection = { id };
 	vector<ItCompany> companiesToUpdate = { company };
-	return updateRecord(idCollection, companiesToUpdate);
+	return update(idCollection, companiesToUpdate);
 }
 
-bool DataBase::updateRecord(const vector<string>& idCollection, const vector<ItCompany>& newCompanyCollection)
+bool DataBase::update(const vector<string>& idCollection, const vector<ItCompany>& newCompanyCollection)
 {
 	ifstream in(DataBaseFile);
 	auto companyCollection = read(in);
 
-	for (int i = 0; i < idCollection.size(); ++i)
+	for (size_t i = 0; i < idCollection.size(); ++i)
 	{
-		auto it = std::find(companyCollection.begin(), 
-							companyCollection.end(), 
-							[&](ItCompany c) { return idCollection[i] == c.getId(); });
+		auto it = std::find_if(companyCollection.begin(),
+								companyCollection.end(),
+								[&](const ItCompany& c) { return idCollection[i] == c.getId(); });
 
 		if (it != companyCollection.end())
 		{
@@ -104,6 +105,6 @@ void DataBase::write(ofstream& out, const vector<ItCompany>& companyCollection)
 void DataBase::updateRecord(ItCompany& dest, const ItCompany& source)
 {
 	dest.setName(source.getName());
-	dest.setEmployeeCount(source.getEmployeeCount);
-	dest.setOfficeCount(source.setOfficeCount);
+	dest.setEmployeeCount(source.getEmployeeCount());
+	dest.setOfficeCount(source.getOfficeCount());
 }
