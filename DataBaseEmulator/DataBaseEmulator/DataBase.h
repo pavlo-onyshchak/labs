@@ -24,5 +24,8 @@ public:
 	bool update(const string& id, const ItCompany&); // 1.5
 	bool update(const vector<string>& idCollection, const vector<ItCompany>&); // 2.6
 private:
+	static vector<ItCompany> read(ifstream& in);
+	static void write(ofstream& out);
+private:
 	fstream _file;
 };

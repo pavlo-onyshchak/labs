@@ -1,7 +1,7 @@
 #include "DataBase.h"
 
 static const string DataBaseFile = ".\\DataBase\\it_companies.dat";
-static const string TmpDataBaseFile = ".\\DataBase\\it_companies_tmpu.dat";
+static const string TmpDataBaseFile = ".\\DataBase\\it_companies_tmp.dat";
 
 ostream& operator<<(ostream& out, const DataBase&)
 {
@@ -64,4 +64,14 @@ bool DataBase::update(const string& id, const ItCompany& company)
 bool DataBase::update(const vector<string>& idCollection, const vector<ItCompany>& companies)
 {
 	return false;
+}
+
+vector<ItCompany> DataBase::read(ifstream& in)
+{
+	return vector<ItCompany>();
+}
+
+void DataBase::write(ofstream& out)
+{
+
 }
