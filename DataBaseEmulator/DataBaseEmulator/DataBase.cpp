@@ -2,7 +2,7 @@
 
 ostream & operator<<(ostream & out, const DataBase &)
 {
-	// TODO: insert return statement here
+	return out;
 }
 
 ItCompany DataBase::find(const string & id) const
