@@ -65,3 +65,38 @@ istream& operator>>(istream& in, ItCompany& company)
 
 	return in;
 }
+
+string ItCompany::getId() const
+{
+	return _id;
+}
+
+string ItCompany::getName() const
+{
+	return _name;
+}
+
+int ItCompany::getEmployeeCount() const
+{
+	return _employeeCount;
+}
+
+int ItCompany::getOfficeCount() const
+{
+	return _officeCount;
+}
+
+void ItCompany::setName(const string& name)
+{
+	_name = name;
+}
+
+void ItCompany::setEmployeeCount(const int employeeCount)
+{
+	_employeeCount = employeeCount;
+}
+
+void ItCompany::setOfficeCount(const int officeCount)
+{
+	_officeCount = officeCount;
+}

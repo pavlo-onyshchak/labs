@@ -10,6 +10,15 @@ public:
 	ItCompany();
 	ItCompany(string name, int empolyeeCount, int officeCount);
 
+	string getId() const;
+	string getName() const;
+	int getEmployeeCount() const;
+	int getOfficeCount() const;
+
+	void setName(const string& name);
+	void setEmployeeCount(const int employeeCount);
+	void setOfficeCount(const int officeCount);
+
 	friend ostream& operator<<(ostream& out, const ItCompany&);
 	friend istream& operator>>(istream& in, ItCompany&);
 private:
