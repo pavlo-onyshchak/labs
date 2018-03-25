@@ -14,40 +14,54 @@ DataBase::DataBase()
 
 bool DataBase::find(const string& id, ItCompany& company) const
 {
-	return false;
+	vector<string> idCollection = { id };
+	vector<ItCompany> foundCompanies;
+	if (find(idCollection, foundCompanies))
+	{
+		company = foundCompanies.front();
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
-bool DataBase::find(const vector<string>& ids, vector<ItCompany>& companies) const
+bool DataBase::find(const vector<string>& idCollection, vector<ItCompany>& companies) const
 {
 	return false;
 }
 
 bool DataBase::remove(const string& id)
 {
-	return false;
+	vector<string> idCollection = { id };
+	return remove(idCollection);
 }
 
-bool DataBase::remove(const vector<string>& ids)
+bool DataBase::remove(const vector<string>& idCollection)
 {
 	return false;
 }
 
 bool DataBase::insert(const string& id)
 {
-	return false;
+	vector<string> idCollection = { id };
+	return insert(idCollection);
 }
 
-bool DataBase::insert(const vector<string>& ids)
+bool DataBase::insert(const vector<string>& idCollection)
 {
 	return false;
 }
 
-bool DataBase::update(const string& id, const ItCompany&)
+bool DataBase::update(const string& id, const ItCompany& company)
 {
-	return false;
+	vector<string> idCollection = { id };
+	vector<ItCompany> companiesToUpdate = { company };
+	return update(idCollection, companiesToUpdate);
 }
 
-bool DataBase::update(const vector<string>& ids, const vector<ItCompany>&)
+bool DataBase::update(const vector<string>& idCollection, const vector<ItCompany>& companies)
 {
 	return false;
 }
