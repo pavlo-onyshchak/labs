@@ -19,9 +19,10 @@ public:
 	bool insert(const string& id); // 1.4
 	bool insert(const vector<string>& idCollection); // 2.5
 
-	bool update(const string& id, const ItCompany&); // 1.5
-	bool update(const vector<string>& idCollection, const vector<ItCompany>&); // 2.6
+	bool updateRecord(const string& id, const ItCompany&); // 1.5
+	bool updateRecord(const vector<string>& idCollection, const vector<ItCompany>&); // 2.6
 private:
 	static vector<ItCompany> read(ifstream& in);
-	static void write(ofstream& out);
+	static void write(ofstream& out, const vector<ItCompany>&);
+	static void updateRecord(ItCompany& dest, const ItCompany& source);
 };

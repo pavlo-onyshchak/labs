@@ -58,16 +58,37 @@ bool DataBase::insert(const vector<string>& idCollection)
 	return false;
 }
 
-bool DataBase::update(const string& id, const ItCompany& company)
+bool DataBase::updateRecord(const string& id, const ItCompany& company)
 {
 	vector<string> idCollection = { id };
 	vector<ItCompany> companiesToUpdate = { company };
-	return update(idCollection, companiesToUpdate);
+	return updateRecord(idCollection, companiesToUpdate);
 }
 
-bool DataBase::update(const vector<string>& idCollection, const vector<ItCompany>& companies)
+bool DataBase::updateRecord(const vector<string>& idCollection, const vector<ItCompany>& newCompanyCollection)
 {
-	return false;
+	ifstream in(DataBaseFile);
+	auto companyCollection = read(in);
+
+	for (int i = 0; i < idCollection.size(); ++i)
+	{
+		auto it = std::find(companyCollection.begin(), 
+							companyCollection.end(), 
+							[&](ItCompany c) { return idCollection[i] == c.getId(); });
+
+		if (it != companyCollection.end())
+		{
+			updateRecord(*it, newCompanyCollection[i]);
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	ofstream out(DataBaseFile);
+	write(out, companyCollection);
+	return true;
 }
 
 vector<ItCompany> DataBase::read(ifstream& in)
@@ -75,7 +96,14 @@ vector<ItCompany> DataBase::read(ifstream& in)
 	return vector<ItCompany>();
 }
 
-void DataBase::write(ofstream& out)
+void DataBase::write(ofstream& out, const vector<ItCompany>& companyCollection)
 {
 
+}
+
+void DataBase::updateRecord(ItCompany& dest, const ItCompany& source)
+{
+	dest.setName(source.getName());
+	dest.setEmployeeCount(source.getEmployeeCount);
+	dest.setOfficeCount(source.setOfficeCount);
 }
