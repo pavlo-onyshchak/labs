@@ -11,7 +11,7 @@ ostream& operator<<(ostream& out, const DataBase& db)
 	auto companyCollection = db.read(in);
 	for (auto company : companyCollection)
 	{
-		out << company << endl;
+	 	out << company << endl;
 	}
 
 	return out;
@@ -45,17 +45,27 @@ bool DataBase::remove(const string& id)
 
 bool DataBase::remove(const vector<string>& idCollection)
 {
+
 	return false;
 }
 
-bool DataBase::insert(const string& id)
+bool DataBase::insert(const ItCompany& company)
 {
-	vector<string> idCollection = { id };
-	return insert(idCollection);
+	vector<ItCompany> TmpCollection = {company};
+	return insert(TmpCollection);
 }
 
-bool DataBase::insert(const vector<string>& idCollection)
+bool DataBase::insert(const vector<ItCompany>& TmpCollection)
 {
+    ifstream in(DataBaseFile);
+    auto companyCollection = read(in);
+    for (int i = 0; i < TmpCollection.size(); i++)
+    {
+        companyCollection.push_back(TmpCollection[i]);
+    }
+
+    ofstream out(DataBaseFile);
+    write(out, companyCollection);
 	return false;
 }
 

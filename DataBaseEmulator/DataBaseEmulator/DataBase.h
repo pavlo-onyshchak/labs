@@ -16,8 +16,8 @@ public:
 	bool remove(const string& id); // 1.3
 	bool remove(const vector<string>& idCollection); // 2.4
 
-	bool insert(const string& id); // 1.4
-	bool insert(const vector<string>& idCollection); // 2.5
+	bool insert(const ItCompany& company); // 1.4
+	bool insert(const vector<ItCompany>& TmpCollection); // 2.5
 
 	bool update(const string& id, const ItCompany&); // 1.5
 	bool update(const vector<string>& idCollection, const vector<ItCompany>&); // 2.6
