@@ -24,5 +24,6 @@ public:
 private:
 	static vector<ItCompany> read(ifstream& in);
 	static void write(ofstream& out, const vector<ItCompany>&);
+	static bool isEmpty(ifstream& in);
 	static void updateRecord(ItCompany& dest, const ItCompany& source);
 };

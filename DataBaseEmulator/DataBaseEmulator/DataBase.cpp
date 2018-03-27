@@ -2,7 +2,7 @@
 #include <fstream>
 #include <algorithm>
 
-static const string DataBaseFile = ".\\DataBase\\it_companies.dat";
+static const string DataBaseFile = R"(D:\Projects\labs\DataBaseEmulator\DataBase\it_companies.dat)";
 static const string TmpDataBaseFile = ".\\DataBase\\it_companies_tmp.dat";
 static const ios_base::openmode OverwriteFileMode = ios::out | ios::trunc;
 
@@ -46,7 +46,7 @@ bool DataBase::remove(const string& id)
 
 bool DataBase::remove(const vector<string>& idCollection)
 {
-    ifstream in(DataBaseFile);
+	ifstream in(DataBaseFile);
     auto companyCollection = read(in);
     
     for (auto id : idCollection)
@@ -78,7 +78,7 @@ bool DataBase::insert(const ItCompany& company)
 
 bool DataBase::insert(const vector<ItCompany>& TmpCollection)
 {
-    ifstream in(DataBaseFile);
+	ifstream in(DataBaseFile);
     auto companyCollection = read(in);
     for (int i = 0; i < TmpCollection.size(); i++)
     {
@@ -127,12 +127,18 @@ vector<ItCompany> DataBase::read(ifstream& in)
 {
 	vector<ItCompany> companyCollection;
 	ItCompany company;
-	while (in >> company)
+	while (!isEmpty(in) && !in.eof())
 	{
+		in >> company;
 		companyCollection.push_back(company);
 	}
 
 	return companyCollection;
+}
+
+bool DataBase::isEmpty(ifstream& in)
+{
+	return in.peek() == std::ifstream::traits_type::eof();
 }
 
 void DataBase::write(ofstream& out, const vector<ItCompany>& companyCollection)
