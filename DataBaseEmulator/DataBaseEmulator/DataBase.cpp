@@ -45,8 +45,28 @@ bool DataBase::remove(const string& id)
 
 bool DataBase::remove(const vector<string>& idCollection)
 {
+    ifstream in(DataBaseFile);
+    auto companyCollection = read(in);
+    
+    for (auto id : idCollection)
+    {
+        auto it = std::find_if(companyCollection.begin(),
+                               companyCollection.end(),
+                               [&](const ItCompany& c) { return id == c.getId(); });
 
-	return false;
+        if (it != companyCollection.end())
+        {
+            companyCollection.erase(it);
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    ofstream out(DataBaseFile);
+    write(out, companyCollection);
+    return true;
 }
 
 bool DataBase::insert(const ItCompany& company)
