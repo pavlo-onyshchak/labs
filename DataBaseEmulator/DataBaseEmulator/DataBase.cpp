@@ -4,6 +4,7 @@
 
 static const string DataBaseFile = ".\\DataBase\\it_companies.dat";
 static const string TmpDataBaseFile = ".\\DataBase\\it_companies_tmp.dat";
+static const ios_base::openmode OverwriteFileMode = ios::out | ios::trunc;
 
 ostream& operator<<(ostream& out, const DataBase& db)
 {
@@ -64,7 +65,7 @@ bool DataBase::remove(const vector<string>& idCollection)
         }
     }
 
-    ofstream out(DataBaseFile);
+    ofstream out(DataBaseFile, OverwriteFileMode);
     write(out, companyCollection);
     return true;
 }
@@ -117,19 +118,29 @@ bool DataBase::update(const vector<string>& idCollection, const vector<ItCompany
 		}
 	}
 
-	ofstream out(DataBaseFile);
+	ofstream out(DataBaseFile, OverwriteFileMode);
 	write(out, companyCollection);
 	return true;
 }
 
 vector<ItCompany> DataBase::read(ifstream& in)
 {
-	return vector<ItCompany>();
+	vector<ItCompany> companyCollection;
+	ItCompany company;
+	while (in >> company)
+	{
+		companyCollection.push_back(company);
+	}
+
+	return companyCollection;
 }
 
 void DataBase::write(ofstream& out, const vector<ItCompany>& companyCollection)
 {
-
+	for (auto company : companyCollection)
+	{
+		out << company << endl;
+	}
 }
 
 void DataBase::updateRecord(ItCompany& dest, const ItCompany& source)
