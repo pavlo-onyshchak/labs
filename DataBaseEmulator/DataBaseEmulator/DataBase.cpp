@@ -35,7 +35,26 @@ bool DataBase::find(const string& id, ItCompany& company) const
 
 bool DataBase::find(const vector<string>& idCollection, vector<ItCompany>& companies) const
 {
-	return false;
+	ifstream in(DataBaseFile);
+	auto companyCollection = read(in);
+
+	for (auto id : idCollection)
+	{
+		auto it = std::find_if(companyCollection.begin(),
+							   companyCollection.end(),
+							   [&](const ItCompany& c) { return id == c.getId(); });
+
+		if (it != companyCollection.end())
+		{
+			companies.push_back(*it);
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	return true;
 }
 
 bool DataBase::remove(const string& id)
