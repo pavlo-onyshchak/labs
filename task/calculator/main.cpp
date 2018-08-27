@@ -1,6 +1,6 @@
 #include"Circle.h"
 #include"Paralelogram.h"
-#include"Square.h"
+#include"Quadrate.h"
 #include<iostream>
 #include<vector>
 
@@ -8,10 +8,17 @@ using namespace std;
 
 int main()
 {
-    vector<Basic>vec;
-    Paralelogram first(2, 2, 4);
+    vector<Basic*>vec;
+    Circle*first = new Circle(3);
+   
     vec.push_back(first);
-    
+
+
+    for (auto item : vec)
+    {
+        cout << item->Square() << endl;
+        cout << item->Perimetr() << endl;
+    }
     
     system("pause");
     return 0;

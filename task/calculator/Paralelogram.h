@@ -9,6 +9,6 @@ private:
     int height;
 public:
     Paralelogram(int, int, int);
-    int area()const;
-    int perimetr()const;
+    double Square()const;
+    double Perimetr()const;
 };

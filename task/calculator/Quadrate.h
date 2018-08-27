@@ -1,13 +1,17 @@
 #pragma once
 #include"Basic.h"
 
-class Circle:public Basic
+class Quadrate:public Basic
 {
 private:
-    int radius;
+    
+    int width;
+    int length;
+    
 
 public:
-    Circle(int);
+    Quadrate(int side_1, int side_2);
     double Square()const;
     double Perimetr()const;
+
 };
