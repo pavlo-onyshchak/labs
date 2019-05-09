@@ -36,11 +36,11 @@ namespace myWindowsFormApplication
         }
         private void getAllData()
         {
-            using (SqlConnection connection = new SqlConnection("Data Source = localhost; Initial Catalog = MyWindowsFormApplication; Integrated Security = True"))
+            using (SqlConnection connection = new SqlConnection("Data Source = DESKTOP-CLTQNMO; Initial Catalog = MyWindowsFormApplication; Integrated Security = True"))
             {
                 connection.Open();
                 //SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Employee", connection);
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Employee", connection);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Tourist", connection);
                 DataTable dt = new DataTable();
                 SqlDataReader rdr = cmd.ExecuteReader();
 
@@ -48,7 +48,9 @@ namespace myWindowsFormApplication
                 //dt.Columns.Add("Number");
                 dt.Columns.Add("Name");// dt.Columns.Add("Name");
                 dt.Columns.Add("Surname");
-                dt.Columns.Add("Salary");
+                dt.Columns.Add("Sel.Country");
+                dt.Columns.Add("Day Count");
+                dt.Columns.Add("Total Price");
 
                 while (rdr.Read())
                 {
@@ -56,7 +58,9 @@ namespace myWindowsFormApplication
                     //dr["Number"] = rdr["ID"];
                     dr["Name"] = rdr["Name"];
                     dr["Surname"] = rdr["Surname"];
-                    dr["Salary"] = rdr["Salary"];
+                    dr["Sel.Country"] = rdr["SelectedCountry"];
+                    dr["Day Count"] = rdr["DayCount"];
+                    dr["Total Price"] = rdr["TotalPrice"];
                     dt.Rows.Add(dr);
                 }
                 grdDeleteEmployee.DataSource = dt;
@@ -66,9 +70,9 @@ namespace myWindowsFormApplication
 
         private void getSearchedData()
         {
-            using (SqlConnection connection = new SqlConnection("Data Source = localhost; Initial Catalog = MyWindowsFormApplication; Integrated Security = True"))
+            using (SqlConnection connection = new SqlConnection("Data Source = DESKTOP-CLTQNMO; Initial Catalog = MyWindowsFormApplication; Integrated Security = True"))
             {
-                using (SqlCommand cmd = new SqlCommand("EmployeeSearch", connection))
+                using (SqlCommand cmd = new SqlCommand("TouristSearch", connection))
                 {
 
 
@@ -82,7 +86,9 @@ namespace myWindowsFormApplication
                     dt.Columns.Add("Number");
                     dt.Columns.Add("Name");
                     dt.Columns.Add("Surname");
-                    dt.Columns.Add("Salary");
+                    dt.Columns.Add("Sel.Country");
+                    dt.Columns.Add("Day Count");
+                    dt.Columns.Add("Total Price");
 
                     while (rdr.Read())
                     {
@@ -90,7 +96,9 @@ namespace myWindowsFormApplication
                         dr["Number"] = rdr["ID"];
                         dr["Name"] = rdr["Name"];
                         dr["Surname"] = rdr["Surname"];
-                        dr["Salary"] = rdr["Salary"];
+                        dr["Sel.Country"] = rdr["SelectedCountry"];
+                        dr["Day Count"] = rdr["DayCount"];
+                        dr["Total Price"] = rdr["TotalPrice"];
                         dt.Rows.Add(dr);
                     }
                     grdDeleteEmployee.DataSource = dt;
@@ -101,9 +109,9 @@ namespace myWindowsFormApplication
         }
         private void DeleteData(DataGridViewCellEventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection("Data Source = localhost; Initial Catalog = MyWindowsFormApplication; Integrated Security = True"))
+            using (SqlConnection connection = new SqlConnection("Data Source = DESKTOP-CLTQNMO; Initial Catalog = MyWindowsFormApplication; Integrated Security = True"))
             {
-                using (SqlCommand cmd = new SqlCommand("DeleteEmployee", connection))
+                using (SqlCommand cmd = new SqlCommand("DeleteTourist", connection))
                 {
 
                     connection.Open();

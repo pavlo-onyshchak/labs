@@ -36,7 +36,7 @@ namespace myWindowsFormApplication
             btnAdd.Size = new Size(110, 25);
             btnAdd.Location = new Point(100, 50);
             btnAdd.BackColor = Color.White;
-            btnAdd.Text = "Add employee";
+            btnAdd.Text = "Add Tourist";
             btnAdd.Click += new System.EventHandler(btnAdd_Click);
 
 
@@ -44,7 +44,7 @@ namespace myWindowsFormApplication
             btnDelete.Size = new Size(110, 25);
             btnDelete.Location = new Point(100, 75);
             btnDelete.BackColor = Color.White;
-            btnDelete.Text = "Remove employee";
+            btnDelete.Text = "Remove Tourist";
             btnDelete.Click += new System.EventHandler(btnDelete_Click);
 
             //btnShow
@@ -52,14 +52,14 @@ namespace myWindowsFormApplication
             btnShow.Location = new Point(100, 100);
             btnShow.BackColor = Color.White;
             btnShow.AutoSize = true;
-            btnShow.Text = "Show employee";
+            btnShow.Text = "Show All Information";
             btnShow.Click += new System.EventHandler(btnShow_Click);
 
             //btnSearch
             btnSearch.Size = new Size(110, 25);
             btnSearch.Location = new Point(100, 125);
             btnSearch.BackColor = Color.White;
-            btnSearch.Text = "Employee search";
+            btnSearch.Text = "Tourists search";
             btnSearch.Click += new System.EventHandler(btnSearch_Click);
 
 

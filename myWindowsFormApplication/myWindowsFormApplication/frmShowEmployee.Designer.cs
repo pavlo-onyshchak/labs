@@ -41,7 +41,7 @@ namespace myWindowsFormApplication
             grdShow.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.Size = new Size(430, 300);
+            this.Size = new Size(430, 200);
             this.Location = new Point(50, 100);
             this.Controls.Add(grdShow);
             this.MinimizeBox = false;

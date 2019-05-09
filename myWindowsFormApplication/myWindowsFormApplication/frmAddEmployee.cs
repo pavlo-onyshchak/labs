@@ -20,15 +20,17 @@ namespace myWindowsFormApplication
         }
         private void btnOK_Click(object sender,EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection("Data Source = localhost; Initial Catalog = MyWindowsFormApplication; Integrated Security = True"))
+            using (SqlConnection connection = new SqlConnection("Data Source = DESKTOP-CLTQNMO; Initial Catalog = MyWindowsFormApplication; Integrated Security = True"))
             {
-                using (SqlCommand cmd = new SqlCommand("InsertIntoEmployee", connection))
+                using (SqlCommand cmd = new SqlCommand("AddTourist", connection))
                 {
                     connection.Open();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Name", txbName.Text);
                     cmd.Parameters.AddWithValue("@Surname", txbSurname.Text);
-                    cmd.Parameters.AddWithValue("@Salary", txbSalary.Text);
+                    cmd.Parameters.AddWithValue("@SelectedCountry", txbSelectedCountry.Text);
+                    cmd.Parameters.AddWithValue("@DayCount", txbDayCount.Text);
+                    cmd.Parameters.AddWithValue("@TotalPrice", txbTotalPrice.Text);
                     cmd.ExecuteNonQuery();
                 }
             }
