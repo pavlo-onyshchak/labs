@@ -1,112 +1,98 @@
-#include"Vector.h"
-#include<iostream>
+#include "Vector.h"
+#include <iostream>
 
 using namespace std;
 
 void Vector::resize()
 {
-    int* arr = new int[capacity + 10];
-    for (int i = 0; i < capacity; i++)
-    {
-        arr[i] = array[i];
-    }
+    const int growth_factor = 2;
+    int* arr = new int[_capacity * growth_factor];
 
-    capacity += 10;
-    delete[] array;
-    array = arr;
+    memcpy(arr, _array, _capacity * sizeof(_capacity));
+    _capacity *= growth_factor;
+
+    delete[] _array;
+    _array = arr;
 }
 
 Vector::Vector()
 {
-    capacity = 10;
-    size_t = 0;
-    array = new int[capacity];
+    _capacity = 10;
+    _size = 0;
+    _array = new int[_capacity];
 
 }
 
-Vector::Vector(const Vector &object)
+Vector::Vector(const Vector& object)
 {
-    this->size_t = object.size_t;
-    this->capacity = object.capacity;
-    this->array = object.array;
+    _size = object._size;
+    _capacity = object._capacity;
+    _array = new int [_capacity];
+    memcpy(_array, object._array, _capacity * sizeof(_capacity));
 }
 
-void Vector::operator=(const Vector &object)
+Vector& Vector::operator=(const Vector& object)
 {
-    this->size_t = object.size_t;
-    this->capacity = object.capacity;
-    this->array = object.array;
+    if (this != &object)
+    {
+        _size = object._size;
+        _capacity = object._capacity;
+        _array = new int[_capacity];
+        memcpy(_array, object._array, _capacity * sizeof(_capacity));
+    }
+
+    return *this;
 }
 
-void Vector::push(int val)
+void Vector::push_back(const int val)
 {
-    if (size_t >= capacity)
+    if (_size >= _capacity)
     {
         resize();
     }
-    array[size_t] = val;
-    size_t++;
+
+    _array[_size] = val;
+    ++_size;
 }
 
-void Vector::pop()
+void Vector::pop_back() 
 {
-    --size_t;
+    --_size;
 }
 
 
 int Vector::size() const
 {
-    return size_t;
+    return _size;
 }
 
-void Vector::show() const
+int& Vector::operator[](const int index)
 {
-    for (int i = 0; i < size_t; i++)
-    {
-        cout << array[i] << "  ";
-    }
-}
-
-int& Vector::operator[](int index)
-{
-    
-    return array[index];
+    return _array[index];
 }
 
 void Vector::erase(const int index)
 {
-    if (index >= size_t)
-    {
-        throw out_of_range("out of range");
-    }
-
-    for (int i = index; i < size_t; i++)
-    {
-        array[i] = array[i + 1];
-    }
-    size_t--;
+    memmove(_array + index, _array + index + 1, (_size - index - 1) * sizeof(_size));
+    --_size;
 }
 
 void Vector::clear()
 {
-    while (size_t)
-    {
-        size_t--;
-    }
+    _size = 0;
 }
 
 int Vector::find(const int val)
 {
     int found_index = -1;
-    for (int i = 0; i < size_t; i++)
+    for (int i = 0; i < _size; i++)
     {
-        if (val == array[i])
+        if (val == operator[](i))
         {
             found_index = i;
             break;
         }
     }
-
-     return found_index;
+    return found_index;
 }
 

@@ -1,26 +1,25 @@
 #pragma once
 
-
 class Vector
 {
-private:
-    int size_t;
-    unsigned int capacity;
-    int* array;
-    void resize();
 public:
     Vector();
     Vector(const Vector &object);
-    void push(int val);
-    void pop();
-    int size()const;
-    void show()const;
-    int &operator[] (int val);
+
+    int& operator[](const int val);
+    Vector& operator=(const Vector &object);
+
+    void push_back(const int val);
+    void pop_back();
     void erase(const int index);
     void clear();
     int find(const int val);
-    void operator=(const Vector &object);
-
-   
-
+    int size() const;
+    
+private:
+    void resize();
+ 
+    int _size;
+    int _capacity;
+    int* _array;
 };
