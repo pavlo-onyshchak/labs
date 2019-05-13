@@ -24,7 +24,21 @@ Vector::Vector()
 
 }
 
-void Vector::push_back(int val)
+Vector::Vector(const Vector &object)
+{
+    this->size_t = object.size_t;
+    this->capacity = object.capacity;
+    this->array = object.array;
+}
+
+void Vector::operator=(const Vector &object)
+{
+    this->size_t = object.size_t;
+    this->capacity = object.capacity;
+    this->array = object.array;
+}
+
+void Vector::push(int val)
 {
     if (size_t >= capacity)
     {
@@ -34,20 +48,11 @@ void Vector::push_back(int val)
     size_t++;
 }
 
-void Vector::pop_back()
+void Vector::pop()
 {
     --size_t;
 }
 
-int Vector::get_item(int index) const
-{
-    return array[index];
-}
-
-void Vector::set_item(const int index,const int &value)
-{
-    array[index] = value;
-}
 
 int Vector::size() const
 {
@@ -61,3 +66,47 @@ void Vector::show() const
         cout << array[i] << "  ";
     }
 }
+
+int& Vector::operator[](int index)
+{
+    
+    return array[index];
+}
+
+void Vector::erase(const int index)
+{
+    if (index >= size_t)
+    {
+        throw out_of_range("out of range");
+    }
+
+    for (int i = index; i < size_t; i++)
+    {
+        array[i] = array[i + 1];
+    }
+    size_t--;
+}
+
+void Vector::clear()
+{
+    while (size_t)
+    {
+        size_t--;
+    }
+}
+
+int Vector::find(const int val)
+{
+    int found_index = -1;
+    for (int i = 0; i < size_t; i++)
+    {
+        if (val == array[i])
+        {
+            found_index = i;
+            break;
+        }
+    }
+
+     return found_index;
+}
+
